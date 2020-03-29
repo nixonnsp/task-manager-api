@@ -1,0 +1,6 @@
+{
+  "editor.snippetSuggestions": "top",
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.format": "standard",
+  "ruby.intellisense": "rubyLocate"
+}
