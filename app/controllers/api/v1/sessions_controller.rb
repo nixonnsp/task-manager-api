@@ -11,6 +11,13 @@ class Api::V1::SessionsController < ApplicationController
       render json: { errors: 'invalid email or password'}, status: 401
     end
   end
+
+  def destroy
+    user = User.find_by(auth_token: params[:id])
+    user.generate_authentication_token
+    user.save
+    head 204
+  end
   
 
   private
