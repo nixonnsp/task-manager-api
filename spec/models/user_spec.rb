@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
+  let(:user) { build(:user)}
+
+  it { is_expected.to have_many(:tasks).dependent(:destroy) }
+
+  it { expect(user).to respond_to(:email) }
+  it {is_expected.to validate_presence_of(:email)}
+
   #subject { build(:user) } 
   #pending 'add some examples to (or delete) #{__FILE__}'
   #before do
@@ -19,6 +27,7 @@ RSpec.describe User, type: :model do
   # it {is_expected.to respond_to(:name)}
 
   # Mais uma forma de testar nossas classes
+<<<<<<< HEAD
   let(:user) { build(:user)}
   it { expect(user).to respond_to(:email) }
   it {is_expected.to validate_presence_of(:email)}
@@ -54,4 +63,6 @@ RSpec.describe User, type: :model do
     end
     
   end
+=======
+>>>>>>> adding-tasks
 end
