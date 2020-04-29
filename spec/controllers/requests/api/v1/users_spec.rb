@@ -6,7 +6,8 @@ RSpec.describe 'Users API', type: :request do
   let(:headers) do
     {
       'Accept' => 'application/vnd.taskmanager.v1',
-      'Content-Type' => Mime[:json].to_s
+      'Content-Type' => Mime[:json].to_s,
+      'Authorization' => user.Auth_token
     }
   end
 
@@ -18,8 +19,7 @@ RSpec.describe 'Users API', type: :request do
     end
     
     context 'when the user exists' do
-      it 'returns the user' do       
-        
+      it 'returns the user' do               
         expect(json_body[:id]).to eq(user_id)  
       end
 
