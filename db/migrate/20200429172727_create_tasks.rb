@@ -4,7 +4,6 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :description
       t.boolean :done, default: false
-      #Ex:- :default =>''
       t.datetime :deadline
       t.references :user, foreign_key: true
 

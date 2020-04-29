@@ -5,16 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates_uniqueness_of :auth_token
-<<<<<<< HEAD
-  before_create :generate_authentication_token
 
-  def info
-    "#{email} - #{created_at} - #{Devise.friendly_token}"
-  end
-
-  def generate_authentication_token
-    begin 
-=======
   before_create :generate_authentication_token!
   
   has_many :tasks, dependent: :destroy
@@ -25,7 +16,6 @@ class User < ApplicationRecord
 
   def generate_authentication_token!
     begin
->>>>>>> adding-tasks
       self.auth_token = Devise.friendly_token
     end while User.exists?(auth_token: auth_token)
   end
