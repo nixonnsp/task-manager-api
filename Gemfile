@@ -56,3 +56,7 @@ gem 'active_model_serializers', '~> 0.10.2'
 
 # Gem para implementa perquisas e ordenação
 gem 'ransack'
+
+# gens para geração do auth token via divise
+gem 'omniauth'
+gem 'devise_token_auth'
