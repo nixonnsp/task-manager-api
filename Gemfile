@@ -53,3 +53,6 @@ gem 'devise'
 
 # Gem para serialização dos jsons seguindo a json_api
 gem 'active_model_serializers', '~> 0.10.2'
+
+# Gem para implementa perquisas e ordenação
+gem 'ransack'
