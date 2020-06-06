@@ -12,8 +12,7 @@ class Api::V2::TaskSerializer < ActiveModel::Serializer
 
   def deadline_to_br
     I18n.l(object.deadline, format: :datetime ) if object.deadline.present?
-  end
-  
+  end  
 
   belongs_to :user
 end
