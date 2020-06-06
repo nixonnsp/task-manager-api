@@ -60,3 +60,7 @@ gem 'ransack'
 # gens para geração do auth token via divise
 gem 'omniauth'
 gem 'devise_token_auth'
+
+
+# Gem para implementar o i18n
+gem 'rails-i18n', '~> 5.1'
