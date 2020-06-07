@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   devise_for :users, only: [:ssessions], controllers: {sessions: 'api/v1/sessions'}
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Config for local aplicattion constraints: {subdomain: 'api'} arquivo hosts
+  # namespace :api, defaults: {format: :json}, constraints: {subdomain: 'api'}, path: '/' do
 
-  namespace :api, defaults: {format: :json}, constraints: {subdomain: 'api'}, path: '/' do
+  # Config for any dominio
+  namespace :api, defaults: {format: :json}, path: '/' do
     namespace :v1, path: '/', constraints: ApiVersionConstraint.new(version: 1) do
         resources :users, only: [:show, :create, :update, :destroy]
         resources :sessions, only: [:create, :destroy]
